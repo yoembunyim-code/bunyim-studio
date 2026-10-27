@@ -1,4 +1,4 @@
-name: Build BUNYIM Windows EXE
+Name: Build BUNYIM Windows EXE
 
 on:
   workflow_dispatch:
@@ -36,13 +36,7 @@ jobs:
           Copy-Item (Join-Path $bin.DirectoryName "ffprobe.exe") bin\ffprobe.exe
 
       - name: Build exe
-        shell: pwsh
-        run: |
-          pyinstaller --noconfirm --clean --windowed --name BunyimStudio 
-            --add-binary "bin\ffmpeg.exe;." --add-binary "bin\ffprobe.exe;." 
-            --collect-all faster_whisper --collect-all ctranslate2 --collect-all av 
-            --collect-all edge_tts --collect-all deep_translator --collect-all google.genai 
-            main.py
+        run: python build.py
 
       - name: Zip
         shell: pwsh
