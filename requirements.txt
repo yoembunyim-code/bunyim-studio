@@ -1,0 +1,9 @@
+PySide6>=6.6
+faster-whisper>=1.0
+edge-tts>=6.1.12
+gTTS>=2.5
+google-genai>=1.0
+deep-translator>=1.11
+requests
+pandas
+numpy
